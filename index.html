@@ -238,7 +238,7 @@
     <a href="#journey" class="link-underline">Journey</a>
     <a href="#services" class="link-underline">Practice</a>
     <a href="#research" class="link-underline">Research</a>
-    <a href="#contact" class="link-underline">Contact</a>
+    <!-- Removed "Contact" link here -->
     <a href="#contact" class="btn-primary" style="padding: 10px 22px; font-size: 13px;">
       <span>Begin</span>
       <i class="fas fa-arrow-right text-[10px]"></i>
@@ -281,7 +281,7 @@
 
       <div class="mt-10 max-w-xl">
         <p class="text-[17px] leading-[1.7]" style="color: var(--ink-soft);">
-          I'm <span class="font-medium" style="color: var(--ink);">Dipanjan Bagchi</span> — a psychometrician and RCI-registered clinical psychologist. My work lives at the intersection of rigorous psychological measurement and evidence-based therapeutic care, drawing on CBT, psychodynamic psychotherapy, and emotion focues therapy.
+          I'm <span class="font-medium" style="color: var(--ink);">Dipanjan Bagchi</span> — a psychometrician and RCI-registered clinical psychologist. My work lives at the intersection of rigorous psychological measurement and evidence-based therapeutic care, drawing on Item Response Theory, classical test theory, and years of clinical practice.
         </p>
       </div>
 
@@ -391,9 +391,9 @@
             <i class="fas fa-quote-left text-2xl" style="color: var(--terracotta);"></i>
             <div>
               <p class="font-display italic text-lg leading-relaxed" style="color: var(--ink);">
-                "Until you make the unconscious conscious, it will direct your life and you will call it fate."
+                "A score is a question phrased differently — never an identity. Used well, it deepens the conversation. Used poorly, it ends one."
               </p>
-              <p class="text-xs tracking-[0.15em] uppercase mt-4" style="color: var(--ink-faint);">— Carl Jung </p>
+              <p class="text-xs tracking-[0.15em] uppercase mt-4" style="color: var(--ink-faint);">— from doctoral research, Christ University</p>
             </div>
           </div>
         </div>
@@ -1231,8 +1231,9 @@
             <i class="fas fa-lock text-[10px]"></i>
             Encrypted in transit. Held in confidence.
           </p>
+          <!-- Changed button text to "Book an Appointment" -->
           <button type="submit" class="btn-primary">
-            <span>Book Appointment</span>
+            <span>Book an Appointment</span>
             <i class="fas fa-arrow-right text-[11px]"></i>
           </button>
         </div>
@@ -1330,7 +1331,7 @@
       <div class="flex items-center gap-6">
         <a href="#" class="link-underline">Privacy</a>
         <a href="#" class="link-underline">Terms</a>
-        <span class="font-display italic"></span>
+        <span class="font-display italic">made slowly</span>
       </div>
     </div>
   </div>
@@ -1432,7 +1433,7 @@
       });
 
       if (response.ok) {
-        showToast('Your note is on its way. I\'ll reply within two working days.');
+        showToast('Your appointment request is on its way. I\'ll reply within two working days.');
         form.reset();
         // Reset tabs
         document.querySelectorAll('.tab-btn').forEach((b, i) => {
