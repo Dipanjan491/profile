@@ -224,9 +224,7 @@
 <!-- =========== NAV =========== -->
 <nav class="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-5 flex items-center justify-between backdrop-blur-md" style="background: rgba(239, 230, 214, 0.78); border-bottom: 1px solid rgba(44,40,35,0.06);">
   <a href="#top" class="flex items-center gap-3 group">
-    <div class="w-10 h-10 rounded-full flex items-center justify-center transition-transform group-hover:rotate-12" style="background: var(--ink); color: var(--paper-light);">
-      <span class="font-display text-sm font-medium">DB</span>
-    </div>
+    <img src="dipanjanimage.png" alt="Dipanjan Bagchi" class="w-20 h-20 rounded-full object-cover border border-[rgba(44,40,35,0.12)] shadow-sm shrink-0">
     <div class="hidden sm:block">
       <div class="font-display text-base font-medium tracking-tight leading-none">Dipanjan Bagchi</div>
       <div class="text-[10px] tracking-[0.15em] uppercase mt-1" style="color: var(--ink-faint);">Psychometrician · Clinical Psychologist</div>
@@ -238,7 +236,7 @@
     <a href="#journey" class="link-underline">Journey</a>
     <a href="#services" class="link-underline">Practice</a>
     <a href="#research" class="link-underline">Research</a>
-    <!-- Removed "Contact" link here -->
+    <a href="#contact" class="link-underline">Contact</a>
     <a href="#contact" class="btn-primary" style="padding: 10px 22px; font-size: 13px;">
       <span>Begin</span>
       <i class="fas fa-arrow-right text-[10px]"></i>
@@ -281,7 +279,7 @@
 
       <div class="mt-10 max-w-xl">
         <p class="text-[17px] leading-[1.7]" style="color: var(--ink-soft);">
-          I'm <span class="font-medium" style="color: var(--ink);">Dipanjan Bagchi</span> — a psychometrician and RCI-registered clinical psychologist. My work lives at the intersection of rigorous psychological measurement and evidence-based therapeutic care, drawing on CBT, psychodynamic psychotherapy, emotion focused therapy and years of clinical practice.
+          I'm <span class="font-medium" style="color: var(--ink);">Dipanjan Bagchi</span> — a psychometrician and RCI-registered clinical psychologist. My work lives at the intersection of rigorous psychological measurement and evidence-based therapeutic care, drawing on CBT, psychodynamic psychotherapy, and emotion focues therapy.
         </p>
       </div>
 
@@ -391,9 +389,9 @@
             <i class="fas fa-quote-left text-2xl" style="color: var(--terracotta);"></i>
             <div>
               <p class="font-display italic text-lg leading-relaxed" style="color: var(--ink);">
-                "Until you make the unconscious conscious, it will direct your life and you will call it fate"
+                "Until you make the unconscious conscious, it will direct your life and you will call it fate."
               </p>
-              <p class="text-xs tracking-[0.15em] uppercase mt-4" style="color: var(--ink-faint);">— Carl Jung</p>
+              <p class="text-xs tracking-[0.15em] uppercase mt-4" style="color: var(--ink-faint);">— Carl Jung </p>
             </div>
           </div>
         </div>
@@ -1231,9 +1229,8 @@
             <i class="fas fa-lock text-[10px]"></i>
             Encrypted in transit. Held in confidence.
           </p>
-          <!-- Changed button text to "Book an Appointment" -->
           <button type="submit" class="btn-primary">
-            <span>Book an Appointment</span>
+            <span>Book Appointment</span>
             <i class="fas fa-arrow-right text-[11px]"></i>
           </button>
         </div>
@@ -1433,7 +1430,7 @@
       });
 
       if (response.ok) {
-        showToast('Your appointment request is on its way. I\'ll reply within two working days.');
+        showToast('Your note is on its way. I\'ll reply within two working days.');
         form.reset();
         // Reset tabs
         document.querySelectorAll('.tab-btn').forEach((b, i) => {
