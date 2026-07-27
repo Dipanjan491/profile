@@ -415,9 +415,39 @@
     background: linear-gradient(180deg, var(--terracotta) 0%, var(--sage) 50%, var(--ink-faint) 100%);
   }
 
+  /* FAQ accordion styles */
+  .faq-item {
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  }
+  .faq-item.open {
+    border-color: rgba(198,123,92,0.4) !important;
+    box-shadow: 0 8px 30px rgba(44,40,35,0.06);
+  }
+  .faq-trigger {
+    cursor: none;
+    transition: background-color 0.3s ease;
+  }
+  .faq-trigger:hover {
+    background-color: rgba(250,246,239,0.5);
+  }
+  .faq-icon {
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), background-color 0.3s ease;
+  }
+  .faq-item.open .faq-icon {
+    transform: rotate(135deg);
+    background-color: var(--terracotta) !important;
+  }
+  .faq-item.open .faq-icon i {
+    color: var(--paper) !important;
+  }
+  .faq-panel {
+    transition: max-height 0.5s cubic-bezier(0.16,1,0.3,1);
+  }
+
   @media (hover: none) {
     body { cursor: auto; }
     .cursor-dot, .cursor-ring { display: none; }
+    .faq-trigger { cursor: pointer; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -455,19 +485,19 @@
     </div>
   </a>
 
-  <div class="hidden md:flex items-center gap-9 text-sm" style="color: var(--ink-soft);">
+  <div class="hidden lg:flex items-center gap-9 text-sm" style="color: var(--ink-soft);">
     <a href="#philosophy" class="link-underline">Philosophy</a>
     <a href="#journey" class="link-underline">Journey</a>
     <a href="#services" class="link-underline">Practice</a>
     <a href="#research" class="link-underline">Research</a>
-    <a href="#contact" class="link-underline">Contact</a>
+    <a href="#faq" class="link-underline">FAQ</a>
     <a href="#contact" class="btn-primary" style="padding: 10px 22px; font-size: 13px;">
-      <span>Begin</span>
+      <span>Contact</span>
       <i class="fas fa-arrow-right text-[10px]" aria-hidden="true"></i>
     </a>
   </div>
 
-  <button class="md:hidden text-xl" aria-label="Open menu" aria-expanded="false">
+  <button class="lg:hidden text-xl" aria-label="Open menu" aria-expanded="false">
     <i class="fas fa-bars" aria-hidden="true"></i>
   </button>
 </nav>
@@ -1337,6 +1367,123 @@
   </div>
 </section>
 
+<!-- =========== FAQ =========== -->
+<section id="faq" class="relative py-32 md:py-40 px-6 md:px-12 overflow-hidden" aria-labelledby="faq-heading">
+
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" aria-hidden="true" style="background: radial-gradient(circle, rgba(198,123,92,0.12), transparent 70%); filter: blur(60px);"></div>
+  <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" aria-hidden="true" style="background: radial-gradient(circle, rgba(139,155,126,0.14), transparent 70%); filter: blur(50px);"></div>
+
+  <div class="max-w-5xl mx-auto relative z-10">
+
+    <div class="reveal flex items-center gap-4 mb-14">
+      <span class="section-num text-sm" aria-hidden="true">08 — Questions</span>
+      <div class="flex-1 diag-line" aria-hidden="true"></div>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-12 mb-16">
+      <div class="md:col-span-7 reveal">
+        <h2 id="faq-heading" class="font-display font-light leading-[1.05] tracking-[-0.01em]" style="font-size: clamp(2.2rem, 5vw, 4rem); color: var(--ink);">
+          Things people <span class="italic" style="color: var(--terracotta);">often ask</span> before reaching out.
+        </h2>
+      </div>
+      <div class="md:col-span-5 reveal delay-2 flex items-end">
+        <p class="text-[15px] leading-[1.8]" style="color: var(--ink-soft);">
+          A few common questions about the practice, the approach, and what to expect. If yours isn't here, a brief note is always welcome.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ accordion -->
+    <div class="reveal space-y-3" id="faqList">
+
+      <!-- FAQ Item 1 -->
+      <div class="faq-item rounded-2xl overflow-hidden" style="background: var(--paper); border: 1px solid rgba(44,40,35,0.08);">
+        <button class="faq-trigger w-full flex items-center justify-between gap-4 p-6 md:p-7 text-left" aria-expanded="false" aria-controls="faq-panel-1" id="faq-trigger-1">
+          <span class="font-display text-lg md:text-xl font-light" style="color: var(--ink);">What therapy approaches does Dipanjan Bagchi use?</span>
+          <span class="faq-icon w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(198,123,92,0.15); color: var(--terracotta-deep);">
+            <i class="fas fa-plus text-xs" aria-hidden="true"></i>
+          </span>
+        </button>
+        <div id="faq-panel-1" class="faq-panel" role="region" aria-labelledby="faq-trigger-1" style="max-height: 0; overflow: hidden;">
+          <div class="px-6 md:px-7 pb-6 md:pb-7 text-[15px] leading-[1.8]" style="color: var(--ink-soft);">
+            Dipanjan Bagchi integrates Cognitive Behavioural Therapy (CBT), psychodynamic psychotherapy, and Emotion Focused Therapy (EFT) — always tailored to the individual rather than applied as a rigid protocol. He works with anxiety, depression, grief, identity, burnout, trauma, and relationship difficulty.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="faq-item rounded-2xl overflow-hidden" style="background: var(--paper); border: 1px solid rgba(44,40,35,0.08);">
+        <button class="faq-trigger w-full flex items-center justify-between gap-4 p-6 md:p-7 text-left" aria-expanded="false" aria-controls="faq-panel-2" id="faq-trigger-2">
+          <span class="font-display text-lg md:text-xl font-light" style="color: var(--ink);">Is Dipanjan Bagchi RCI registered?</span>
+          <span class="faq-icon w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(198,123,92,0.15); color: var(--terracotta-deep);">
+            <i class="fas fa-plus text-xs" aria-hidden="true"></i>
+          </span>
+        </button>
+        <div id="faq-panel-2" class="faq-panel" role="region" aria-labelledby="faq-trigger-2" style="max-height: 0; overflow: hidden;">
+          <div class="px-6 md:px-7 pb-6 md:pb-7 text-[15px] leading-[1.8]" style="color: var(--ink-soft);">
+            Yes. Dipanjan Bagchi holds RCI registration (CRR-A57782) as a Clinical Psychologist, obtained after completing his M.Phil in Clinical Psychology at the University of Calcutta. This ensures adherence to the ethical and professional standards set by the Rehabilitation Council of India.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="faq-item rounded-2xl overflow-hidden" style="background: var(--paper); border: 1px solid rgba(44,40,35,0.08);">
+        <button class="faq-trigger w-full flex items-center justify-between gap-4 p-6 md:p-7 text-left" aria-expanded="false" aria-controls="faq-panel-3" id="faq-trigger-3">
+          <span class="font-display text-lg md:text-xl font-light" style="color: var(--ink);">Does Dipanjan Bagchi offer online therapy?</span>
+          <span class="faq-icon w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(198,123,92,0.15); color: var(--terracotta-deep);">
+            <i class="fas fa-plus text-xs" aria-hidden="true"></i>
+          </span>
+        </button>
+        <div id="faq-panel-3" class="faq-panel" role="region" aria-labelledby="faq-trigger-3" style="max-height: 0; overflow: hidden;">
+          <div class="px-6 md:px-7 pb-6 md:pb-7 text-[15px] leading-[1.8]" style="color: var(--ink-soft);">
+            Yes. All psychotherapy and psychometric consultations are conducted online, making them accessible pan-India and internationally. Sessions are 50 minutes, held weekly or fortnightly, conducted in a secure and confidential virtual setting.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="faq-item rounded-2xl overflow-hidden" style="background: var(--paper); border: 1px solid rgba(44,40,35,0.08);">
+        <button class="faq-trigger w-full flex items-center justify-between gap-4 p-6 md:p-7 text-left" aria-expanded="false" aria-controls="faq-panel-4" id="faq-trigger-4">
+          <span class="font-display text-lg md:text-xl font-light" style="color: var(--ink);">What is psychometric consultation?</span>
+          <span class="faq-icon w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(198,123,92,0.15); color: var(--terracotta-deep);">
+            <i class="fas fa-plus text-xs" aria-hidden="true"></i>
+          </span>
+        </button>
+        <div id="faq-panel-4" class="faq-panel" role="region" aria-labelledby="faq-trigger-4" style="max-height: 0; overflow: hidden;">
+          <div class="px-6 md:px-7 pb-6 md:pb-7 text-[15px] leading-[1.8]" style="color: var(--ink-soft);">
+            Psychometric consultation involves rigorous psychological assessment grounded in Item Response Theory (IRT) and Classical Test Theory (CTT). Services include scale construction, construct validation, item bank development, latent profile analysis, reliability and bias analysis, and adaptive testing logic — for individuals, institutions, and organisations.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 5 -->
+      <div class="faq-item rounded-2xl overflow-hidden" style="background: var(--paper); border: 1px solid rgba(44,40,35,0.08);">
+        <button class="faq-trigger w-full flex items-center justify-between gap-4 p-6 md:p-7 text-left" aria-expanded="false" aria-controls="faq-panel-5" id="faq-trigger-5">
+          <span class="font-display text-lg md:text-xl font-light" style="color: var(--ink);">What is Dipanjan Bagchi's doctoral research about?</span>
+          <span class="faq-icon w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(198,123,92,0.15); color: var(--terracotta-deep);">
+            <i class="fas fa-plus text-xs" aria-hidden="true"></i>
+          </span>
+        </button>
+        <div id="faq-panel-5" class="faq-panel" role="region" aria-labelledby="faq-trigger-5" style="max-height: 0; overflow: hidden;">
+          <div class="px-6 md:px-7 pb-6 md:pb-7 text-[15px] leading-[1.8]" style="color: var(--ink-soft);">
+            Dipanjan Bagchi is pursuing a Ph.D. in Psychometry at Christ University. His doctoral thesis focuses on the construction and validation of a Moral Intelligence Scale adapted for the Indian context, applying Item Response Theory, latent profile analysis, and bibliometric methods.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA below FAQ -->
+    <div class="reveal delay-2 mt-12 text-center">
+      <p class="text-sm italic mb-5" style="color: var(--ink-faint);">Still have a question that isn't answered here?</p>
+      <a href="#contact" class="btn-secondary">
+        <span>Ask directly</span>
+        <i class="fas fa-arrow-right text-[11px]" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- =========== CONTACT =========== -->
 <section id="contact" class="relative py-32 md:py-40 px-6 md:px-12 overflow-hidden" aria-labelledby="contact-heading">
 
@@ -1350,7 +1497,7 @@
   <div class="max-w-5xl mx-auto relative z-10">
 
     <div class="reveal flex items-center gap-4 mb-14">
-      <span class="section-num text-sm" aria-hidden="true">08 — Begin</span>
+      <span class="section-num text-sm" aria-hidden="true">09 — Begin</span>
       <div class="flex-1 diag-line" aria-hidden="true"></div>
     </div>
 
@@ -1534,7 +1681,7 @@
   }
   animateRing();
 
-  document.querySelectorAll('a, button, .polaroid, .lift-card, .tab-btn, input, textarea, .expertise-tag').forEach(el => {
+  document.querySelectorAll('a, button, .polaroid, .lift-card, .tab-btn, input, textarea, .expertise-tag, .faq-trigger').forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
   });
@@ -1575,6 +1722,45 @@
       btn.setAttribute('aria-pressed', 'true');
       seekingInput.value = btn.dataset.value;
     });
+  });
+
+  // FAQ accordion
+  const faqTriggers = document.querySelectorAll('.faq-trigger');
+  faqTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+      const panel = document.getElementById(trigger.getAttribute('aria-controls'));
+      const faqItem = trigger.closest('.faq-item');
+
+      // Close all other items
+      faqTriggers.forEach(t => {
+        if (t !== trigger) {
+          t.setAttribute('aria-expanded', 'false');
+          const p = document.getElementById(t.getAttribute('aria-controls'));
+          if (p) p.style.maxHeight = '0';
+          t.closest('.faq-item').classList.remove('open');
+        }
+      });
+
+      // Toggle current item
+      if (isExpanded) {
+        trigger.setAttribute('aria-expanded', 'false');
+        panel.style.maxHeight = '0';
+        faqItem.classList.remove('open');
+      } else {
+        trigger.setAttribute('aria-expanded', 'true');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        faqItem.classList.add('open');
+      }
+    });
+  });
+
+  // Open first FAQ item by default
+  window.addEventListener('load', () => {
+    const firstTrigger = document.querySelector('.faq-trigger');
+    if (firstTrigger) {
+      setTimeout(() => firstTrigger.click(), 800);
+    }
   });
 
   // Toast notification
