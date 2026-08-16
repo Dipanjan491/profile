@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+  PRIMARY META TAGS — PSYCHOMETRIC CONSULTATION
+============================================================ -->
+<title>Psychometric & Statistical Consultation | Dipanjan Bagchi</title>
+<meta name="description" content="Specialized psychometric consultation by Dipanjan Bagchi. Scale construction, construct validation, Item Response Theory (IRT), Latent Profile Analysis (LPA), and statistical modeling for institutions and researchers.">
+<meta name="keywords" content="psychometrician India, scale construction, construct validation, Item Response Theory, IRT analysis, latent profile analysis, Jamovi statistical consulting, R psychometrics, test design, Dipanjan Bagchi">
+<meta name="author" content="Dipanjan Bagchi">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#EFE6D6">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon-db.svg">
+<link rel="apple-touch-icon" href="favicon-db.svg">
+<link rel="canonical" href="https://dipanjanbagchi.github.io/psychometrics.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dipanjanbagchi.github.io/psychometrics.html">
+<meta property="og:title" content="Psychometric & Statistical Consultation — Dipanjan Bagchi">
+<meta property="og:description" content="Scale construction, construct validation, IRT, Latent Profile Analysis, and computational statistics in R & Jamovi for institutions, test publishers, and researchers.">
+<meta property="og:image" content="https://dipanjanbagchi.github.io/dipanjanimage.png">
+<meta property="og:locale" content="en_IN">
+<meta property="og:site_name" content="Dipanjan Bagchi">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Dipanjan Bagchi — Psychometric Consultation & Statistical Modeling",
+  "description": "Psychometric test development, construct validation, IRT & CTT calibration, and computational workshops led by Dipanjan Bagchi.",
+  "url": "https://dipanjanbagchi.github.io/psychometrics.html",
+  "image": "https://dipanjanbagchi.github.io/dipanjanimage.png",
+  "email": "bagchidipanjan491@gmail.com",
+  "telephone": "+918910530761",
+  "areaServed": "India",
+  "availableLanguage": ["English", "Bengali", "Hindi"]
+}
+</script>
+
+<!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  :root {
+    --bg: #EFE6D6;
+    --paper: #FAF6EF;
+    --paper-light: #FDFAF4;
+    --sage: #8B9B7E;
+    --sage-deep: #4F5D45;
+    --terracotta: #C67B5C;
+    --terracotta-deep: #A85C3D;
+    --dusk-deep: #B58484;
+    --ink: #2C2823;
+    --ink-soft: #5C554B;
+    --ink-faint: #8A8378;
+  }
+
+  * { -webkit-font-smoothing: antialiased; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    overflow-x: hidden;
+    cursor: none;
+    line-height: 1.6;
+  }
+
+  .font-display { font-family: 'Fraunces', serif; font-optical-sizing: auto; }
+  .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+  }
+
+  .linen-weave {
+    background-image:
+      repeating-linear-gradient(0deg, rgba(79,93,69,0.025) 0px, rgba(79,93,69,0.025) 1px, transparent 1px, transparent 3px),
+      repeating-linear-gradient(90deg, rgba(79,93,69,0.025) 0px, rgba(79,93,69,0.025) 1px, transparent 1px, transparent 3px);
+  }
+
+  .sunbeam {
+    position: absolute;
+    background: linear-gradient(180deg, rgba(255, 235, 200, 0.55) 0%, rgba(255, 220, 180, 0.18) 60%, transparent 100%);
+    transform-origin: top center;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    filter: blur(3px);
+  }
+
+  @keyframes sunrayShift {
+    0%, 100% { opacity: 0.45; }
+    50% { opacity: 0.75; }
+  }
+  .sunray-anim { animation: sunrayShift 11s ease-in-out infinite; }
+
+  .reveal { opacity: 0; transform: translateY(36px); transition: opacity 1.2s cubic-bezier(0.16,1,0.3,1), transform 1.2s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal.delay-1 { transition-delay: 0.15s; }
+  .reveal.delay-2 { transition-delay: 0.3s; }
+  .reveal.delay-3 { transition-delay: 0.45s; }
+
+  .cursor-dot {
+    position: fixed; width: 7px; height: 7px; background: var(--terracotta);
+    border-radius: 50%; pointer-events: none; z-index: 9999;
+    transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s, background 0.3s;
+    mix-blend-mode: multiply;
+  }
+  .cursor-ring {
+    position: fixed; width: 34px; height: 34px; border: 1px solid var(--terracotta);
+    border-radius: 50%; pointer-events: none; z-index: 9998;
+    transform: translate(-50%, -50%); transition: transform 0.18s ease-out, width 0.4s, height 0.4s, border-color 0.4s, opacity 0.4s;
+    opacity: 0.5;
+  }
+  .cursor-hover .cursor-ring { width: 60px; height: 60px; opacity: 0.8; border-color: var(--terracotta-deep); }
+  .cursor-hover .cursor-dot { width: 4px; height: 4px; }
+
+  .btn-primary {
+    background: var(--terracotta); color: var(--paper-light);
+    padding: 15px 30px; border-radius: 999px; font-weight: 500; font-size: 14px;
+    transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+    display: inline-flex; align-items: center; gap: 12px; border: none;
+    letter-spacing: 0.01em;
+  }
+  .btn-primary:hover { background: var(--terracotta-deep); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(168,92,61,0.22); }
+  .btn-primary:hover i { transform: translateX(4px); }
+  .btn-primary i { transition: transform 0.3s ease; }
+
+  .btn-secondary {
+    border: 1px solid var(--ink); color: var(--ink);
+    padding: 15px 30px; border-radius: 999px; font-weight: 500; font-size: 14px;
+    transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;
+    background: transparent;
+  }
+  .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+
+  .link-underline {
+    position: relative; text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .link-underline::after {
+    content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 1px;
+    background: currentColor; transition: width 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  .link-underline:hover::after, .link-underline.active::after { width: 100%; }
+  .link-underline.active { color: var(--terracotta-deep); font-weight: 500; }
+
+  .diag-line { height: 1px; background: linear-gradient(90deg, var(--ink-faint) 0%, transparent 100%); opacity: 0.25; }
+  .section-num { font-family: 'Fraunces', serif; font-style: italic; color: var(--terracotta); }
+
+  .scroll-progress {
+    position: fixed; top: 0; left: 0; height: 2px;
+    background: linear-gradient(90deg, var(--terracotta), var(--sage-deep));
+    z-index: 100; transition: width 0.1s linear;
+  }
+
+  .form-field {
+    width: 100%; background: transparent; border: none;
+    border-bottom: 1px solid rgba(44,40,35,0.2); padding: 14px 0;
+    font-family: inherit; font-size: 15px; color: var(--ink);
+    transition: border-color 0.3s ease; outline: none;
+  }
+  .form-field:focus { border-color: var(--terracotta); }
+
+  .lift-card {
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  .lift-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(44,40,35,0.08);
+  }
+
+  .expertise-pill {
+    border: 1px solid var(--ink-faint);
+    color: var(--ink-soft);
+    transition: all 0.3s ease;
+  }
+  .expertise-pill:hover {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+    transform: translateY(-2px);
+  }
+
+  @media (hover: none) {
+    body { cursor: auto; }
+    .cursor-dot, .cursor-ring { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body class="linen-weave">
+
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress" style="width: 0%" role="progressbar" aria-label="Page scroll progress"></div>
+
+<!-- =========== NAV =========== -->
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-5 flex items-center justify-between backdrop-blur-md" style="background: rgba(239, 230, 214, 0.88); border-bottom: 1px solid rgba(44,40,35,0.06);" aria-label="Main navigation">
+  <a href="index.html" class="flex items-center gap-3 group" aria-label="Dipanjan Bagchi — Home">
+    <img src="favicon-db.svg" alt="Dipanjan Bagchi Monogram" class="w-12 h-12 rounded-full object-cover border border-[rgba(44,40,35,0.12)] shadow-sm shrink-0" width="48" height="48">
+    <div class="hidden sm:block">
+      <div class="font-display text-base font-medium tracking-tight leading-none">Dipanjan Bagchi</div>
+      <div class="text-[10px] tracking-[0.15em] uppercase mt-1" style="color: var(--ink-faint);">Psychometrician · Clinical Psychologist</div>
+    </div>
+  </a>
+
+  <div class="hidden lg:flex items-center gap-8 text-sm" style="color: var(--ink-soft);">
+    <a href="index.html" class="link-underline">Home</a>
+    <a href="psychotherapy.html" class="link-underline">Psychotherapy</a>
+    <a href="psychometrics.html" class="link-underline active" aria-current="page">Psychometrics</a>
+    <a href="research.html" class="link-underline">Research</a>
+    <a href="#consult-form" class="btn-primary" style="padding: 10px 22px; font-size: 13px;">
+      <span>Consultation</span>
+      <i class="fas fa-arrow-right text-[10px]" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <button id="mobileMenuBtn" class="lg:hidden text-xl p-2" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+    <i class="fas fa-bars" aria-hidden="true"></i>
+  </button>
+</nav>
+
+<!-- Mobile Navigation Drawer -->
+<div id="mobileMenu" class="fixed top-[74px] left-0 right-0 z-40 p-6 backdrop-blur-lg lg:hidden hidden transition-all duration-300 shadow-xl" style="background: rgba(239, 230, 214, 0.97); border-bottom: 1px solid rgba(44,40,35,0.1);">
+  <div class="flex flex-col gap-4 text-base font-medium">
+    <a href="index.html" class="mobile-nav-link py-2 border-b border-[rgba(44,40,35,0.06)]">Home</a>
+    <a href="psychotherapy.html" class="mobile-nav-link py-2 border-b border-[rgba(44,40,35,0.06)]">Psychotherapy (Clinical Practice)</a>
+    <a href="psychometrics.html" class="mobile-nav-link py-2 border-b border-[rgba(44,40,35,0.06)] text-terracotta font-semibold">Psychometrics &amp; Consultation</a>
+    <a href="research.html" class="mobile-nav-link py-2 border-b border-[rgba(44,40,35,0.06)]">Research &amp; Publications</a>
+    <a href="#consult-form" class="mobile-nav-link btn-primary justify-center mt-2" style="padding: 12px 24px;">
+      <span>Consultation</span>
+      <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+    </a>
+  </div>
+</div>
+
+<!-- =========== HERO =========== -->
+<section class="relative min-h-[85vh] flex items-center pt-36 pb-20 px-6 md:px-12 overflow-hidden" aria-label="Psychometric Consultation Introduction">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="sunbeam sunray-anim" style="top:-10%; left:10%; width:150px; height:125%; transform: skewX(-16deg);"></div>
+    <div class="sunbeam sunray-anim" style="top:-10%; left:70%; width:130px; height:125%; transform: skewX(-16deg); animation-delay:-3s;"></div>
+  </div>
+
+  <div class="absolute top-1/3 left-1/4 w-[600px] h-[600px] rounded-full pointer-events-none" aria-hidden="true" style="background: radial-gradient(circle, rgba(79,93,69,0.15), transparent 65%); filter: blur(50px);"></div>
+  <div class="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" aria-hidden="true" style="background: radial-gradient(circle, rgba(198,123,92,0.14), transparent 65%); filter: blur(50px);"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-8 reveal">
+      <div class="inline-flex items-center gap-2.5 mb-8 px-4 py-2 rounded-full" style="background: rgba(198,123,92,0.15); border: 1px solid rgba(198,123,92,0.25);">
+        <span class="w-2 h-2 rounded-full" style="background: var(--terracotta);" aria-hidden="true"></span>
+        <span class="text-[11px] tracking-[0.12em] uppercase font-medium" style="color: var(--terracotta-deep);">Measurement &amp; Quantitative Psychology</span>
+      </div>
+
+      <h1 class="font-display font-light leading-[0.96] tracking-[-0.02em]" style="font-size: clamp(2.8rem, 6.5vw, 5.5rem);">
+        Psychometric design,<br>
+        <span class="italic font-normal" style="color: var(--terracotta);">scale validation</span> &amp;<br>
+        statistical consultation.
+      </h1>
+
+      <p class="mt-8 max-w-2xl text-[17px] leading-[1.8]" style="color: var(--ink-soft);">
+        Translating latent psychological constructs into reliable, mathematically sound measurement instruments. Grounded in Item Response Theory (IRT), Classical Test Theory (CTT), Latent Profile Analysis (LPA), and computational statistics in R and Jamovi.
+      </p>
+
+      <div class="mt-10 flex flex-wrap items-center gap-4">
+        <a href="#consult-form" class="btn-primary">
+          <span>Request consultation</span>
+          <i class="fas fa-arrow-right text-[11px]" aria-hidden="true"></i>
+        </a>
+        <a href="#services" class="btn-secondary">
+          <span>View services</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="lg:col-span-4 reveal delay-1">
+      <div class="p-8 rounded-3xl" style="background: var(--paper); border: 1px solid rgba(44,40,35,0.08);">
+        <div class="text-[10px] tracking-[0.15em] uppercase mb-4" style="color: var(--ink-faint);">Core Competencies</div>
+        <div class="space-y-4 text-sm">
+          <div class="flex items-start gap-3">
+            <i class="fas fa-layer-group mt-1 text-xs" style="color: var(--terracotta);" aria-hidden="true"></i>
+            <div>
+              <div class="font-medium">Scale Development &amp; Validation</div>
+              <div class="text-xs" style="color: var(--ink-soft);">Item generation, EFA/CFA, construct validity</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <i class="fas fa-chart-line mt-1 text-xs" style="color: var(--sage-deep);" aria-hidden="true"></i>
+            <div>
+              <div class="font-medium">Item Response Theory (IRT)</div>
+              <div class="text-xs" style="color: var(--ink-soft);">1PL, 2PL, 3PL &amp; Polytomous GRM models</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <i class="fas fa-users-viewfinder mt-1 text-xs" style="color: var(--dusk-deep);" aria-hidden="true"></i>
+            <div>
+              <div class="font-medium">Latent Profile Analysis (LPA)</div>
+              <div class="text-xs" style="color: var(--ink-soft);">Sub-population typology &amp; mixture modeling</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <i class="fas fa-code mt-1 text-xs" style="color: var(--terracotta-deep);" aria-hidden="true"></i>
+            <div>
+              <div class="font-medium">Computational Tooling</div>
+              <div class="text-xs" style="color: var(--ink-soft);">R (`mirt`, `lavaan`, `psych`), Jamovi, Python</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== SERVICES =========== -->
+<section id="services" class="py-24 md:py-32 px-6 md:px-12 relative" style="background: linear-gradient(180deg, transparent, rgba(230,217,193,0.4), transparent);">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal flex items-center gap-4 mb-14">
+      <span class="section-num text-sm" aria-hidden="true">01 — Consulting Services</span>
+      <div class="flex-1 diag-line" aria-hidden="true"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Service 1 -->
+      <div class="reveal lift-card p-8 rounded-3xl" style="background: var(--paper); border: 1px solid rgba(44,40,35,0.08);">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background: rgba(198,123,92,0.15); color: var(--terracotta-deep);">
+          <i class="fas fa-drafting-compass text-xl" aria-hidden="true"></i>
+        </div>
+        <div class="text-[10px] tracking-[0.15em] uppercase mb-2" style="color: var(--ink-faint);">Instrument Design</div>
+        <h3 class="font-display text-2xl font-light mb-4">Scale Construction</h3>
+        <p class="text-[15px] leading-[1.75]" style="color: var(--ink-soft);">
+          End-to-end development of psychometric scales tailored to specific cultural, organizational, or clinical contexts. Item pool generation, cognitive interviewing, pilot administration, and refinement.
+        </p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="reveal delay-1 lift-card p-8 rounded-3xl" style="background: var(--paper); border: 1px solid rgba(44,40,35,0.08);">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background: rgba(79,93,69,0.15); color: var(--sage-deep);">
+          <i class="fas fa-check-double text-xl" aria-hidden="true"></i>
+        </div>
+        <div class="text-[10px] tracking-[0.15em] uppercase mb-2" style="color: var(--ink-faint);">Psychometric Rigor</div>
+        <h3 class="font-display text-2xl font-light mb-4">Construct Validation</h3>
+        <p class="text-[15px] leading-[1.75]" style="color: var(--ink-soft);">
+          Factorial validity via Exploratory &amp; Confirmatory Factor Analysis (EFA/CFA), structural equation modeling (SEM), convergent/discriminant validity tests, and multi-group measurement invariance.
+        </p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="reveal delay-2 lift-card p-8 rounded-3xl" style="background: var(--paper); border: 1px solid rgba(44,40,35,0.08);">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background: rgba(181,132,132,0.15); color: var(--dusk-deep);">
+          <i class="fas fa-project-diagram text-xl" aria-hidden="true"></i>
+        </div>
+        <div class="text-[10px] tracking-[0.15em] uppercase mb-2" style="color: var(--ink-faint);">Modern Test Theory</div>
+        <h3 class="font-display text-2xl font-light mb-4">IRT &amp; Item Calibration</h3>
+        <p class="text-[15px] leading-[1.75]" style="color: var(--ink-soft);">
+          Item parameter estimation (discrimination, difficulty, guessing), Item Information Curves (IIC), Test Information Functions (TIF), and Graded Response Models (GRM) for polytomous items.
+        </p>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="reveal lift-card p-8 rounded-3xl" style="background: var(--paper); border: 1px solid rgba(44,40,35,0.08);">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background: rgba(79,93,69,0.15); color: var(--sage-deep);">
+          <i class="fas fa-people-arrows text-xl" aria-hidden="true"></i>
+        </div>
+        <div class="text-[10px] tracking-[0.15em] uppercase mb-2" style="color: var(--ink-faint);">Typology &amp; Segmentation</div>
+        <h3 class="font-display text-2xl font-light mb-4">Latent Profile Analysis</h3>
+        <p class="text-[15px] leading-[1.75]" style="color: var(--ink-soft);">
+          Identification of distinct unobserved behavioral, cognitive, or moral profiles across heterogeneous groups using Gaussian mixture models and latent class diagnostics.
+        </p>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="reveal delay-1 lift-card p-8 rounded-3xl" style="background: var(--paper); border: 1px solid rgba(44,40,35,0.08);">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background: rgba(198,123,92,0.15); color: var(--terracotta-deep);">
+          <i class="fas fa-scale-balanced text-xl" aria-hidden="true"></i>
+        </div>
+        <div class="text-[10px] tracking-[0.15em] uppercase mb-2" style="color: var(--ink-faint);">Fairness &amp; Precision</div>
+        <h3 class="font-display text-2xl font-light mb-4">Bias &amp; DIF Analytics</h3>
+        <p class="text-[15px] leading-[1.75]" style="color: var(--ink-soft);">
+          Differential Item Functioning (DIF) across demographic, linguistic, or cultural strata. Ensuring items perform equitably without systematic measurement bias.
+        </p>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="reveal delay-2 lift-card p-8 rounded-3xl" style="background: var(--paper); border: 1px solid rgba(44,40,35,0.08);">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background: rgba(44,40,35,0.15); color: var(--ink);">
+          <i class="fas fa-chalkboard-user text-xl" aria-hidden="true"></i>
+        </div>
+        <div class="text-[10px] tracking-[0.15em] uppercase mb-2" style="color: var(--ink-faint);">Capacity Building</div>
+        <h3 class="font-display text-2xl font-light mb-4">Workshops &amp; Mentorship</h3>
+        <p class="text-[15px] leading-[1.75]" style="color: var(--ink-soft);">
+          Training post-graduate researchers, faculty, and industry teams in computational psychometrics with R, Jamovi, and reproducible research workflows.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== COMPUTATIONAL STACK =========== -->
+<section class="py-24 md:py-32 px-6 md:px-12 relative" style="background: var(--ink); color: var(--paper);">
+  <div class="max-w-6xl mx-auto">
+    <div class="reveal flex items-center gap-4 mb-14">
+      <span class="section-num text-sm opacity-80" aria-hidden="true">02 — Computation</span>
+      <div class="flex-1 diag-line" aria-hidden="true"></div>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-6 reveal">
+        <h2 class="font-display font-light text-3xl md:text-5xl leading-tight mb-6">
+          Computational <span class="italic" style="color: var(--terracotta);">rigor</span> in every analysis.
+        </h2>
+        <p class="text-[15px] leading-[1.8] opacity-80 mb-6">
+          All models and calibrations are built on reproducible, programmatic workflows. I work natively across the modern statistical ecosystem to ensure auditable, publication-ready outcomes.
+        </p>
+        <div class="flex flex-wrap gap-2 pt-2">
+          <span class="px-4 py-2 rounded-full text-xs border" style="border-color: rgba(250,246,239,0.25); background: rgba(250,246,239,0.08);">R Statistical Environment</span>
+          <span class="px-4 py-2 rounded-full text-xs border" style="border-color: rgba(250,246,239,0.25); background: rgba(250,246,239,0.08);">mirt (Multidimensional IRT)</span>
+          <span class="px-4 py-2 rounded-full text-xs border" style="border-color: rgba(250,246,239,0.25); background: rgba(250,246,239,0.08);">lavaan (SEM / CFA)</span>
+          <span class="px-4 py-2 rounded-full text-xs border" style="border-color: rgba(250,246,239,0.25); background: rgba(250,246,239,0.08);">tidyLPA (Mixture Modeling)</span>
+          <span class="px-4 py-2 rounded-full text-xs border" style="border-color: rgba(250,246,239,0.25); background: rgba(250,246,239,0.08);">Jamovi (Advanced Modules)</span>
+          <span class="px-4 py-2 rounded-full text-xs border" style="border-color: rgba(250,246,239,0.25); background: rgba(250,246,239,0.08);">Python (Data Processing)</span>
+        </div>
+      </div>
+
+      <div class="md:col-span-6 reveal delay-1">
+        <div class="p-8 rounded-3xl font-mono text-xs leading-relaxed space-y-4" style="background: rgba(250,246,239,0.06); border: 1px solid rgba(250,246,239,0.15);">
+          <div class="flex items-center gap-2 pb-3 border-b border-[rgba(250,246,239,0.15)] text-[11px] opacity-60">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+            <span class="ml-2 font-mono">irt_calibration_model.R</span>
+          </div>
+          <p class="opacity-70"># 2PL Item Response Theory Calibration</p>
+          <p class="text-terracotta">library(mirt)<br>library(lavaan)</p>
+          <p class="opacity-90">fit_2pl &lt;- mirt(data = moral_items, model = 1, itemtype = '2PL')<br>coef_params &lt;- coef(fit_2pl, IRTpars = TRUE, simplify = TRUE)</p>
+          <p class="text-sage opacity-90"># Item Info Curves &amp; Marginal Reliability<br>itemplot(fit_2pl, item = 4, type = 'trace')<br>empirical_rxx(fit_2pl)</p>
+          <p class="opacity-60">=&gt; Convergence: TRUE (EM cycles: 38)<br>=&gt; Marginal Reliability: 0.894</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== CLIENT / COLLABORATION PROFILES =========== -->
+<section class="py-24 md:py-32 px-6 md:px-12 relative">
+  <div class="max-w-6xl mx-auto">
+    <div class="reveal flex items-center gap-4 mb-14">
+      <span class="section-num text-sm" aria-hidden="true">03 — Engagement Models</span>
+      <div class="flex-1 diag-line" aria-hidden="true"></div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-8 rounded-3xl" style="background: var(--paper); border: 1px solid rgba(44,40,35,0.08);">
+        <div class="text-xs uppercase tracking-[0.15em] mb-2 font-medium" style="color: var(--terracotta);">For Researchers &amp; Ph.D. Scholars</div>
+        <h3 class="font-display text-xl mb-4">Methodological Mentorship</h3>
+        <p class="text-sm leading-relaxed" style="color: var(--ink-soft);">
+          Guidance on sample size determination, sampling strategy, structural equation modeling, scale validation protocols, and addressing reviewer critiques for peer-reviewed journals.
+        </p>
+      </div>
+
+      <div class="p-8 rounded-3xl" style="background: var(--paper); border: 1px solid rgba(44,40,35,0.08);">
+        <div class="text-xs uppercase tracking-[0.15em] mb-2 font-medium" style="color: var(--sage-deep);">For Universities &amp; Institutions</div>
+        <h3 class="font-display text-xl mb-4">Institutional Assessment</h3>
+        <p class="text-sm leading-relaxed" style="color: var(--ink-soft);">
+          Development of competency frameworks, student wellness metrics, curriculum evaluation rubrics, and faculty training workshops in Jamovi &amp; R statistical software.
+        </p>
+      </div>
+
+      <div class="p-8 rounded-3xl" style="background: var(--paper); border: 1px solid rgba(44,40,35,0.08);">
+        <div class="text-xs uppercase tracking-[0.15em] mb-2 font-medium" style="color: var(--dusk-deep);">For EdTech &amp; Assessment Orgs</div>
+        <h3 class="font-display text-xl mb-4">Adaptive Testing Logic</h3>
+        <p class="text-sm leading-relaxed" style="color: var(--ink-soft);">
+          Item bank calibration, automated scoring models, dynamic difficulty adjustment rules, and psychometric audit of existing talent/cognitive assessment batteries.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== INQUIRY FORM =========== -->
+<section id="consult-form" class="py-32 px-6 md:px-12 relative overflow-hidden" style="background: var(--paper);">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center reveal mb-16">
+      <span class="section-num text-sm block mb-3" aria-hidden="true">04 — Consultation Request</span>
+      <h2 class="font-display font-light text-3xl md:text-5xl mb-4">
+        Discuss your <span class="italic" style="color: var(--terracotta);">measurement</span> project.
+      </h2>
+      <p class="max-w-lg mx-auto text-sm leading-relaxed" style="color: var(--ink-soft);">
+        Whether you are validating an academic instrument, establishing an item bank, or seeking statistical consultation, share a brief project summary below.
+      </p>
+    </div>
+
+    <form action="https://formspree.io/f/mjgnppje" method="POST" class="space-y-8" id="psychometricForm">
+      <input type="hidden" name="service_type" value="Psychometric & Statistical Consultation">
+      
+      <div class="grid sm:grid-cols-2 gap-8">
+        <div>
+          <label for="c_name" class="text-[10px] tracking-[0.15em] uppercase block mb-1" style="color: var(--ink-faint);">Your Name</label>
+          <input type="text" name="name" id="c_name" class="form-field" placeholder="Full Name" required autocomplete="name">
+        </div>
+        <div>
+          <label for="c_email" class="text-[10px] tracking-[0.15em] uppercase block mb-1" style="color: var(--ink-faint);">Email Address</label>
+          <input type="email" name="email" id="c_email" class="form-field" placeholder="Institutional or personal email" required autocomplete="email">
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-8">
+        <div>
+          <label for="c_org" class="text-[10px] tracking-[0.15em] uppercase block mb-1" style="color: var(--ink-faint);">Institution / Organization</label>
+          <input type="text" name="organization" id="c_org" class="form-field" placeholder="University, Company, or Independent">
+        </div>
+        <div>
+          <label for="c_service" class="text-[10px] tracking-[0.15em] uppercase block mb-1" style="color: var(--ink-faint);">Primary Service Focus</label>
+          <input type="text" name="focus_area" id="c_service" class="form-field" placeholder="e.g., Scale Construction, IRT, LPA, Workshop">
+        </div>
+      </div>
+
+      <div>
+        <label for="c_message" class="text-[10px] tracking-[0.15em] uppercase block mb-1" style="color: var(--ink-faint);">Project Description / Data Scope</label>
+        <textarea name="message" id="c_message" rows="4" class="form-field resize-none" placeholder="Provide context regarding sample size, constructs, timelines, or specific analytical objectives..."></textarea>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-between gap-4 pt-4">
+        <p class="text-xs flex items-center gap-2" style="color: var(--ink-faint);">
+          <i class="fas fa-lock text-[10px]" aria-hidden="true"></i>
+          Confidential &amp; Secure · Direct reply within 2 working days
+        </p>
+        <button type="submit" class="btn-primary">
+          <span>Send Consultation Inquiry</span>
+          <i class="fas fa-arrow-right text-[11px]" aria-hidden="true"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- =========== FOOTER =========== -->
+<footer class="relative px-6 md:px-12 py-16 overflow-hidden" style="background: var(--ink); color: var(--paper);" role="contentinfo">
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="grid md:grid-cols-12 gap-12 mb-14">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center font-display font-medium text-sm" style="background: var(--paper); color: var(--ink);">DB</div>
+          <div>
+            <div class="font-display text-lg font-medium">Dipanjan Bagchi</div>
+            <div class="text-[10px] tracking-[0.15em] uppercase opacity-60">Psychometrician · Clinical Psychologist</div>
+          </div>
+        </div>
+        <p class="text-sm leading-relaxed opacity-70 max-w-sm">
+          Bridging mathematical psychometrics and clinical insight to build valid, culturally attuned measurement systems.
+        </p>
+      </div>
+
+      <nav class="md:col-span-2" aria-label="Page links">
+        <div class="text-[10px] tracking-[0.15em] uppercase mb-4 opacity-60">Navigation</div>
+        <ul class="space-y-2 text-sm opacity-80">
+          <li><a href="index.html" class="link-underline">Home</a></li>
+          <li><a href="psychotherapy.html" class="link-underline">Psychotherapy</a></li>
+          <li><a href="psychometrics.html" class="link-underline">Psychometrics</a></li>
+          <li><a href="research.html" class="link-underline">Research</a></li>
+        </ul>
+      </nav>
+
+      <nav class="md:col-span-2" aria-label="Academic links">
+        <div class="text-[10px] tracking-[0.15em] uppercase mb-4 opacity-60">Academic</div>
+        <ul class="space-y-2 text-sm opacity-80">
+          <li><a href="https://scholar.google.com/citations?user=M4CEF7AAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener noreferrer" class="link-underline">Google Scholar</a></li>
+          <li><a href="https://github.com/Dipanjan491" target="_blank" rel="noopener noreferrer" class="link-underline">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/dipanjan-bagchi-425919aa/" target="_blank" rel="noopener noreferrer" class="link-underline">LinkedIn</a></li>
+        </ul>
+      </nav>
+
+      <div class="md:col-span-3">
+        <div class="text-[10px] tracking-[0.15em] uppercase mb-4 opacity-60">Contact</div>
+        <address class="not-italic text-sm opacity-80 space-y-1">
+          <p class="font-display italic">UPES, Dehradun, Uttarakhand, India</p>
+          <a href="mailto:bagchidipanjan491@gmail.com" class="block link-underline">bagchidipanjan491@gmail.com</a>
+          <a href="tel:+918910530761" class="block link-underline">+91 89105 30761</a>
+        </address>
+      </div>
+    </div>
+
+    <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs opacity-60" style="border-top: 1px solid rgba(250,246,239,0.15);">
+      <div>© 2026 Dipanjan Bagchi · RCI Registered (CRR-A57782) · Academic &amp; Institutional Psychometrics</div>
+      <div class="flex items-center gap-6">
+        <a href="index.html" class="link-underline">Home</a>
+        <a href="#consult-form" class="link-underline">Inquire</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast notification -->
+<div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 px-6 py-4 rounded-full text-sm font-medium pointer-events-none opacity-0 transition-all duration-500 z-[9999]" role="status" aria-live="polite" style="background: var(--ink); color: var(--paper); transform: translate(-50%, 20px);">
+  <span id="toastMsg"></span>
+</div>
+
+<script>
+  // Custom cursor
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const dot = document.querySelector('.cursor-dot');
+    const ring = document.querySelector('.cursor-ring');
+    let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+    let ringX = mouseX, ringY = mouseY;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX; mouseY = e.clientY;
+      if (dot) {
+        dot.style.left = mouseX + 'px';
+        dot.style.top = mouseY + 'px';
+      }
+    });
+
+    function animateRing() {
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+      if (ring) {
+        ring.style.left = ringX + 'px';
+        ring.style.top = ringY + 'px';
+      }
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    document.querySelectorAll('a, button, input, textarea, .lift-card, .expertise-pill').forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    });
+  }
+
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+      mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.classList.toggle('hidden');
+      mobileMenuBtn.innerHTML = isExpanded ? '<i class="fas fa-bars" aria-hidden="true"></i>' : '<i class="fas fa-times" aria-hidden="true"></i>';
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
+      });
+    });
+  }
+
+  // Scroll progress
+  const progress = document.getElementById('scrollProgress');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrollTop = window.scrollY || h.scrollTop;
+    const pct = (scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    if (progress) progress.style.width = pct + '%';
+  }, { passive: true });
+
+  // Reveal observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Toast helper
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+    if (!toast || !toastMsg) return;
+    toastMsg.textContent = msg;
+    toast.style.opacity = '1';
+    toast.style.transform = 'translate(-50%, 0)';
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translate(-50%, 20px)';
+    }, 3600);
+  }
+
+  // Form submission
+  const cForm = document.getElementById('psychometricForm');
+  if (cForm) {
+    cForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = cForm.querySelector('button[type="submit"]');
+      if (!submitBtn) return;
+      const origHtml = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Sending...</span>';
+
+      try {
+        const response = await fetch(cForm.action, {
+          method: 'POST',
+          body: new FormData(cForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          showToast("Inquiry received. I'll review your project and get back shortly.");
+          cForm.reset();
+        } else {
+          showToast('Something went wrong. Please reach out via email directly.');
+        }
+      } catch (err) {
+        showToast('Network error. Please reach out via email directly.');
+      }
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = origHtml;
+    });
+  }
+</script>
+</body>
+</html>

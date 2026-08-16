@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 300 300">
+  <defs>
+    <clipPath id="roundclip">
+      <rect x="0" y="0" width="300" height="300" rx="48"/>
+    </clipPath>
+  </defs>
+
+  <rect x="0" y="0" width="300" height="300" rx="48" fill="#1F2937"/>
+
+  <rect x="0" y="264" width="300" height="36" fill="#D97706" clip-path="url(#roundclip)"/>
+
+  <text x="150" y="236"
+    font-family="'Arial Narrow', 'Helvetica Neue', sans-serif"
+    font-size="196"
+    font-weight="700"
+    font-stretch="condensed"
+    text-anchor="middle"
+    fill="#F8F6F2"
+    letter-spacing="2">DB</text>
+</svg>
