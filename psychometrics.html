@@ -24,7 +24,7 @@
 <meta property="og:url" content="https://dipanjanbagchi.github.io/psychometrics.html">
 <meta property="og:title" content="Psychometric & Statistical Consultation — Dipanjan Bagchi">
 <meta property="og:description" content="Scale construction, construct validation, IRT, Latent Profile Analysis, and computational statistics in R & Jamovi for institutions, test publishers, and researchers.">
-<meta property="og:image" content="https://dipanjanbagchi.github.io/dipanjanimage.png">
+<meta property="og:image" content="https://dipanjanbagchi.github.io/dipanjanimage-800.jpg">
 <meta property="og:locale" content="en_IN">
 <meta property="og:site_name" content="Dipanjan Bagchi">
 
@@ -36,7 +36,7 @@
   "name": "Dipanjan Bagchi — Psychometric Consultation & Statistical Modeling",
   "description": "Psychometric test development, construct validation, IRT & CTT calibration, and computational workshops led by Dipanjan Bagchi.",
   "url": "https://dipanjanbagchi.github.io/psychometrics.html",
-  "image": "https://dipanjanbagchi.github.io/dipanjanimage.png",
+  "image": "https://dipanjanbagchi.github.io/dipanjanimage-800.jpg",
   "email": "bagchidipanjan491@gmail.com",
   "telephone": "+918910530761",
   "areaServed": "India",
@@ -64,7 +64,7 @@
     --dusk-deep: #B58484;
     --ink: #2C2823;
     --ink-soft: #5C554B;
-    --ink-faint: #8A8378;
+    --ink-faint: #6B645B;
   }
 
   * { -webkit-font-smoothing: antialiased; box-sizing: border-box; }
@@ -114,7 +114,8 @@
   }
   .sunray-anim { animation: sunrayShift 11s ease-in-out infinite; }
 
-  .reveal { opacity: 0; transform: translateY(36px); transition: opacity 1.2s cubic-bezier(0.16,1,0.3,1), transform 1.2s cubic-bezier(0.16,1,0.3,1); }
+  .reveal { opacity: 1; transform: translateY(0); transition: opacity 1.2s cubic-bezier(0.16,1,0.3,1), transform 1.2s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.reveal-pending { opacity: 0; transform: translateY(36px); }
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal.delay-1 { transition-delay: 0.15s; }
   .reveal.delay-2 { transition-delay: 0.3s; }
@@ -678,12 +679,29 @@
   }, { passive: true });
 
   // Reveal observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // Content stays visible unless reveal observation is successfully initialized.
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealElements = document.querySelectorAll('.reveal');
+    let observer;
+    try {
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('reveal-pending');
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      revealElements.forEach(el => {
+        observer.observe(el);
+        el.classList.add('reveal-pending');
+      });
+    } catch (error) {
+      if (observer) observer.disconnect();
+      revealElements.forEach(el => el.classList.remove('reveal-pending'));
+    }
+  }
 
   // Toast helper
   function showToast(msg) {

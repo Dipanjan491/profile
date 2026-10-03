@@ -28,7 +28,7 @@
   <meta property="og:title" content="Clinical Psychotherapy Practice — Dipanjan Bagchi">
   <meta property="og:description"
     content="Individual psychotherapy grounded in evidence-based clinical practice (CBT, Psychodynamic, EFT). Secure virtual sessions pan-India and internationally.">
-  <meta property="og:image" content="https://dipanjanbagchi.github.io/dipanjanimage.png">
+  <meta property="og:image" content="https://dipanjanbagchi.github.io/dipanjanimage-800.jpg">
   <meta property="og:locale" content="en_IN">
   <meta property="og:site_name" content="Dipanjan Bagchi">
 
@@ -40,7 +40,7 @@
   "name": "Dipanjan Bagchi — Clinical Psychotherapy Practice",
   "description": "Online psychotherapy practice by RCI-registered Clinical Psychologist Dipanjan Bagchi (CRR-A57782), providing CBT, psychodynamic, and emotion-focused therapy.",
   "url": "https://dipanjanbagchi.github.io/psychotherapy.html",
-  "image": "https://dipanjanbagchi.github.io/dipanjanimage.png",
+  "image": "https://dipanjanbagchi.github.io/dipanjanimage-800.jpg",
   "email": "bagchidipanjan491@gmail.com",
   "telephone": "+918910530761",
   "priceRange": "₹₹",
@@ -104,7 +104,7 @@
       --dusk-deep: #B58484;
       --ink: #2C2823;
       --ink-soft: #5C554B;
-      --ink-faint: #8A8378;
+      --ink-faint: #6B645B;
     }
 
     * {
@@ -173,10 +173,12 @@
     }
 
     .reveal {
-      opacity: 0;
-      transform: translateY(36px);
+      opacity: 1;
+      transform: translateY(0);
       transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
+
+    .reveal.reveal-pending { opacity: 0; transform: translateY(36px); }
 
     .reveal.visible {
       opacity: 1;
@@ -1068,12 +1070,29 @@
     }, { passive: true });
 
     // Reveal observer
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // Content stays visible unless reveal observation is successfully initialized.
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const revealElements = document.querySelectorAll('.reveal');
+      let observer;
+      try {
+        observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove('reveal-pending');
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+        revealElements.forEach(el => {
+          observer.observe(el);
+          el.classList.add('reveal-pending');
+        });
+      } catch (error) {
+        if (observer) observer.disconnect();
+        revealElements.forEach(el => el.classList.remove('reveal-pending'));
+      }
+    }
 
     // Toast helper
     function showToast(msg) {

@@ -31,9 +31,9 @@
 <meta property="og:url" content="https://dipanjanbagchi.github.io/">
 <meta property="og:title" content="Dipanjan Bagchi — Psychometrician & Clinical Psychologist">
 <meta property="og:description" content="RCI-registered clinical psychologist and psychometrician. Evidence-based psychotherapy, rigorous psychometric consultations, and academic research.">
-<meta property="og:image" content="https://dipanjanbagchi.github.io/dipanjanimage.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://dipanjanbagchi.github.io/dipanjanimage-800.jpg">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
 <meta property="og:image:alt" content="Dipanjan Bagchi — Clinical Psychologist and Psychometrician">
 <meta property="og:locale" content="en_IN">
 <meta property="og:site_name" content="Dipanjan Bagchi">
@@ -44,7 +44,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Dipanjan Bagchi — Psychometrician & Clinical Psychologist">
 <meta name="twitter:description" content="RCI-registered clinical psychologist and psychometrician. Evidence-based psychotherapy and psychometric consultation online across India.">
-<meta name="twitter:image" content="https://dipanjanbagchi.github.io/dipanjanimage.png">
+<meta name="twitter:image" content="https://dipanjanbagchi.github.io/dipanjanimage-800.jpg">
 <meta name="twitter:image:alt" content="Dipanjan Bagchi — Clinical Psychologist and Psychometrician">
 
 <!-- ============================================================
@@ -58,7 +58,7 @@
   "jobTitle": ["Psychometrician", "Clinical Psychologist", "Assistant Professor"],
   "description": "RCI-registered clinical psychologist and psychometrician specialising in evidence-based psychotherapy (CBT, psychodynamic, EFT) and rigorous psychological measurement (IRT, scale construction, latent profile analysis) for individuals, institutions, and organisations in India.",
   "url": "https://dipanjanbagchi.github.io/",
-  "image": "https://dipanjanbagchi.github.io/dipanjanimage.png",
+  "image": "https://dipanjanbagchi.github.io/dipanjanimage-800.jpg",
   "email": "bagchidipanjan491@gmail.com",
   "telephone": "+918910530761",
   "address": {
@@ -157,7 +157,7 @@
     --dusk-deep: #B58484;
     --ink: #2C2823;
     --ink-soft: #5C554B;
-    --ink-faint: #8A8378;
+    --ink-faint: #6B645B;
   }
 
   * { -webkit-font-smoothing: antialiased; box-sizing: border-box; }
@@ -213,7 +213,8 @@
   }
   .float-slow { animation: floatSlow 13s ease-in-out infinite; }
 
-  .reveal { opacity: 0; transform: translateY(36px); transition: opacity 1.2s cubic-bezier(0.16,1,0.3,1), transform 1.2s cubic-bezier(0.16,1,0.3,1); }
+  .reveal { opacity: 1; transform: translateY(0); transition: opacity 1.2s cubic-bezier(0.16,1,0.3,1), transform 1.2s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.reveal-pending { opacity: 0; transform: translateY(36px); }
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal.delay-1 { transition-delay: 0.15s; }
   .reveal.delay-2 { transition-delay: 0.3s; }
@@ -660,7 +661,10 @@
 
       <div class="md:col-span-5 reveal delay-2">
         <div class="polaroid" style="transform: rotate(2deg);">
-          <img src="dipanjanimage.png" alt="Dipanjan Bagchi, RCI registered clinical psychologist and psychometrician" class="w-full h-94 object-cover object-top" width="400" height="376" loading="lazy" decoding="async" style="filter: sepia(0.1) saturate(0.9) brightness(1.04);">
+          <picture>
+            <source type="image/webp" srcset="dipanjanimage-400.webp 400w, dipanjanimage-800.webp 800w" sizes="(min-width: 1280px) 480px, (min-width: 768px) 42vw, 100vw">
+            <img src="dipanjanimage-800.jpg" alt="Dipanjan Bagchi, RCI registered clinical psychologist and psychometrician" class="w-full h-[376px] object-cover object-top" width="800" height="800" loading="lazy" decoding="async" style="filter: sepia(0.1) saturate(0.9) brightness(1.04);">
+          </picture>
           <p class="font-display italic text-sm mt-3 text-center" style="color: var(--ink-soft);">Dipanjan Bagchi</p>
         </div>
 
@@ -1014,12 +1018,29 @@
   }, { passive: true });
 
   // Reveal observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // Content stays visible unless reveal observation is successfully initialized.
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealElements = document.querySelectorAll('.reveal');
+    let observer;
+    try {
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('reveal-pending');
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      revealElements.forEach(el => {
+        observer.observe(el);
+        el.classList.add('reveal-pending');
+      });
+    } catch (error) {
+      if (observer) observer.disconnect();
+      revealElements.forEach(el => el.classList.remove('reveal-pending'));
+    }
+  }
 
   // FAQ accordion
   document.querySelectorAll('.faq-trigger').forEach(trigger => {

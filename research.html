@@ -24,7 +24,7 @@
 <meta property="og:url" content="https://dipanjanbagchi.github.io/research.html">
 <meta property="og:title" content="Academic Research & Publications — Dipanjan Bagchi">
 <meta property="og:description" content="Explore doctoral research on Moral Intelligence Scale validation (IRT & LPA), Scopus-indexed papers in Frontiers in Psychology, Springer Nature, and Routledge.">
-<meta property="og:image" content="https://dipanjanbagchi.github.io/dipanjanimage.png">
+<meta property="og:image" content="https://dipanjanbagchi.github.io/dipanjanimage-800.jpg">
 <meta property="og:locale" content="en_IN">
 <meta property="og:site_name" content="Dipanjan Bagchi">
 
@@ -70,7 +70,7 @@
     --dusk-deep: #B58484;
     --ink: #2C2823;
     --ink-soft: #5C554B;
-    --ink-faint: #8A8378;
+    --ink-faint: #6B645B;
   }
 
   * { -webkit-font-smoothing: antialiased; box-sizing: border-box; }
@@ -120,7 +120,8 @@
   }
   .sunray-anim { animation: sunrayShift 11s ease-in-out infinite; }
 
-  .reveal { opacity: 0; transform: translateY(36px); transition: opacity 1.2s cubic-bezier(0.16,1,0.3,1), transform 1.2s cubic-bezier(0.16,1,0.3,1); }
+  .reveal { opacity: 1; transform: translateY(0); transition: opacity 1.2s cubic-bezier(0.16,1,0.3,1), transform 1.2s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.reveal-pending { opacity: 0; transform: translateY(36px); }
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal.delay-1 { transition-delay: 0.15s; }
   .reveal.delay-2 { transition-delay: 0.3s; }
@@ -361,9 +362,9 @@
           </div>
         </div>
 
-        <svg viewBox="0 0 600 300" class="w-full" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Item Characteristic Curves for the Moral Intelligence Scale">
-          <title>Moral Intelligence Scale — Item Characteristic Curves (IRT)</title>
-          <desc>Logistic curves showing item endorsement probability across latent trait theta levels from -3 to +3.</desc>
+        <svg viewBox="0 0 600 300" class="w-full" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustrative Item Characteristic Curves for a 2PL model">
+          <title>Illustrative Item Characteristic Curves (IRT)</title>
+          <desc>Illustrative logistic curves with discrimination 1.5 and difficulties -2, -1, 0, 1, 2. Each curve crosses 50% probability at its difficulty marker. These are not fitted study results.</desc>
           <g stroke="rgba(44,40,35,0.06)" stroke-width="1" aria-hidden="true">
             <line x1="40" y1="40" x2="580" y2="40"/>
             <line x1="40" y1="95" x2="580" y2="95"/>
@@ -373,14 +374,14 @@
           </g>
           <line x1="40" y1="260" x2="580" y2="260" stroke="rgba(44,40,35,0.2)" stroke-width="1.5"/>
           <line x1="40" y1="40" x2="40" y2="260" stroke="rgba(44,40,35,0.2)" stroke-width="1.5"/>
-          <g font-family="DM Sans" font-size="10" fill="#8A8378" aria-hidden="true">
+          <g font-family="DM Sans" font-size="10" fill="#6B645B" aria-hidden="true">
             <text x="28" y="44" text-anchor="end">1.0</text>
             <text x="28" y="99" text-anchor="end">0.75</text>
             <text x="28" y="154" text-anchor="end">0.50</text>
             <text x="28" y="209" text-anchor="end">0.25</text>
             <text x="28" y="264" text-anchor="end">0.0</text>
           </g>
-          <g font-family="DM Sans" font-size="10" fill="#8A8378" aria-hidden="true">
+          <g font-family="DM Sans" font-size="10" fill="#6B645B" aria-hidden="true">
             <text x="40" y="278" text-anchor="middle">-3</text>
             <text x="130" y="278" text-anchor="middle">-2</text>
             <text x="220" y="278" text-anchor="middle">-1</text>
@@ -392,12 +393,12 @@
           <text x="310" y="295" text-anchor="middle" font-family="Fraunces" font-size="11" font-style="italic" fill="#5C554B">Latent Trait Level (θ)</text>
           <text x="15" y="150" text-anchor="middle" font-family="Fraunces" font-size="11" font-style="italic" fill="#5C554B" transform="rotate(-90 15 150)">P(response = 1)</text>
           
-          <!-- Curves -->
-          <path class="draw-line" d="M 40,247 C 90,240 110,220 130,193 C 160,155 180,115 220,85 C 260,58 310,48 400,42 C 490,40 540,40 580,40" fill="none" stroke="#C67B5C" stroke-width="2.5"/>
-          <path class="draw-line" d="M 40,256 C 80,252 110,245 130,233 C 160,212 190,175 220,140 C 250,105 290,72 350,55 C 420,45 500,42 580,41" fill="none" stroke="#D4A5A5" stroke-width="2" style="animation-delay: 0.2s;"/>
-          <path class="draw-line" d="M 40,258 C 90,256 130,252 170,243 C 210,230 250,205 280,175 C 310,145 340,110 380,85 C 430,60 490,48 580,44" fill="none" stroke="#4F5D45" stroke-width="2.5" style="animation-delay: 0.4s;"/>
-          <path class="draw-line" d="M 40,259 C 100,258 150,256 200,250 C 250,242 290,225 330,200 C 370,170 410,135 460,105 C 510,75 550,55 580,48" fill="none" stroke="#A85C3D" stroke-width="2" style="animation-delay: 0.6s;"/>
-          <path class="draw-line" d="M 40,260 C 120,259 180,258 240,253 C 290,247 330,236 370,218 C 410,195 450,165 490,130 C 530,95 560,70 580,58" fill="none" stroke="#B58484" stroke-width="2.5" style="animation-delay: 0.8s;"/>
+          <!-- Illustrative 2PL curves: P = 1 / (1 + exp(-1.5 * (theta - b))), b = -2, -1, 0, 1, 2. -->
+          <path class="draw-line" d="M 40.00,219.87 L 44.50,217.35 L 49.00,214.71 L 53.50,211.95 L 58.00,209.08 L 62.50,206.08 L 67.00,202.97 L 71.50,199.75 L 76.00,196.41 L 80.50,192.97 L 85.00,189.42 L 89.50,185.78 L 94.00,182.04 L 98.50,178.23 L 103.00,174.34 L 107.50,170.39 L 112.00,166.38 L 116.50,162.32 L 121.00,158.23 L 125.50,154.12 L 130.00,150.00 L 134.50,145.88 L 139.00,141.77 L 143.50,137.68 L 148.00,133.62 L 152.50,129.61 L 157.00,125.66 L 161.50,121.77 L 166.00,117.96 L 170.50,114.22 L 175.00,110.58 L 179.50,107.03 L 184.00,103.59 L 188.50,100.25 L 193.00,97.03 L 197.50,93.92 L 202.00,90.92 L 206.50,88.05 L 211.00,85.29 L 215.50,82.65 L 220.00,80.13 L 224.50,77.73 L 229.00,75.44 L 233.50,73.27 L 238.00,71.21 L 242.50,69.25 L 247.00,67.40 L 251.50,65.65 L 256.00,64.00 L 260.50,62.44 L 265.00,60.98 L 269.50,59.60 L 274.00,58.30 L 278.50,57.08 L 283.00,55.93 L 287.50,54.86 L 292.00,53.85 L 296.50,52.91 L 301.00,52.03 L 305.50,51.20 L 310.00,50.43 L 314.50,49.71 L 319.00,49.04 L 323.50,48.41 L 328.00,47.83 L 332.50,47.28 L 337.00,46.77 L 341.50,46.29 L 346.00,45.85 L 350.50,45.44 L 355.00,45.06 L 359.50,44.70 L 364.00,44.36 L 368.50,44.06 L 373.00,43.77 L 377.50,43.50 L 382.00,43.25 L 386.50,43.02 L 391.00,42.80 L 395.50,42.60 L 400.00,42.42 L 404.50,42.24 L 409.00,42.08 L 413.50,41.93 L 418.00,41.80 L 422.50,41.67 L 427.00,41.55 L 431.50,41.44 L 436.00,41.33 L 440.50,41.24 L 445.00,41.15 L 449.50,41.07 L 454.00,40.99 L 458.50,40.92 L 463.00,40.85 L 467.50,40.79 L 472.00,40.73 L 476.50,40.68 L 481.00,40.63 L 485.50,40.59 L 490.00,40.54 L 494.50,40.50 L 499.00,40.47 L 503.50,40.43 L 508.00,40.40 L 512.50,40.37 L 517.00,40.35 L 521.50,40.32 L 526.00,40.30 L 530.50,40.28 L 535.00,40.26 L 539.50,40.24 L 544.00,40.22 L 548.50,40.21 L 553.00,40.19 L 557.50,40.18 L 562.00,40.16 L 566.50,40.15 L 571.00,40.14 L 575.50,40.13 L 580.00,40.12" fill="none" stroke="#C67B5C" stroke-width="2.5"/>
+          <path class="draw-line" d="M 40.00,249.57 L 44.50,248.80 L 49.00,247.97 L 53.50,247.09 L 58.00,246.15 L 62.50,245.14 L 67.00,244.07 L 71.50,242.92 L 76.00,241.70 L 80.50,240.40 L 85.00,239.02 L 89.50,237.56 L 94.00,236.00 L 98.50,234.35 L 103.00,232.60 L 107.50,230.75 L 112.00,228.79 L 116.50,226.73 L 121.00,224.56 L 125.50,222.27 L 130.00,219.87 L 134.50,217.35 L 139.00,214.71 L 143.50,211.95 L 148.00,209.08 L 152.50,206.08 L 157.00,202.97 L 161.50,199.75 L 166.00,196.41 L 170.50,192.97 L 175.00,189.42 L 179.50,185.78 L 184.00,182.04 L 188.50,178.23 L 193.00,174.34 L 197.50,170.39 L 202.00,166.38 L 206.50,162.32 L 211.00,158.23 L 215.50,154.12 L 220.00,150.00 L 224.50,145.88 L 229.00,141.77 L 233.50,137.68 L 238.00,133.62 L 242.50,129.61 L 247.00,125.66 L 251.50,121.77 L 256.00,117.96 L 260.50,114.22 L 265.00,110.58 L 269.50,107.03 L 274.00,103.59 L 278.50,100.25 L 283.00,97.03 L 287.50,93.92 L 292.00,90.92 L 296.50,88.05 L 301.00,85.29 L 305.50,82.65 L 310.00,80.13 L 314.50,77.73 L 319.00,75.44 L 323.50,73.27 L 328.00,71.21 L 332.50,69.25 L 337.00,67.40 L 341.50,65.65 L 346.00,64.00 L 350.50,62.44 L 355.00,60.98 L 359.50,59.60 L 364.00,58.30 L 368.50,57.08 L 373.00,55.93 L 377.50,54.86 L 382.00,53.85 L 386.50,52.91 L 391.00,52.03 L 395.50,51.20 L 400.00,50.43 L 404.50,49.71 L 409.00,49.04 L 413.50,48.41 L 418.00,47.83 L 422.50,47.28 L 427.00,46.77 L 431.50,46.29 L 436.00,45.85 L 440.50,45.44 L 445.00,45.06 L 449.50,44.70 L 454.00,44.36 L 458.50,44.06 L 463.00,43.77 L 467.50,43.50 L 472.00,43.25 L 476.50,43.02 L 481.00,42.80 L 485.50,42.60 L 490.00,42.42 L 494.50,42.24 L 499.00,42.08 L 503.50,41.93 L 508.00,41.80 L 512.50,41.67 L 517.00,41.55 L 521.50,41.44 L 526.00,41.33 L 530.50,41.24 L 535.00,41.15 L 539.50,41.07 L 544.00,40.99 L 548.50,40.92 L 553.00,40.85 L 557.50,40.79 L 562.00,40.73 L 566.50,40.68 L 571.00,40.63 L 575.50,40.59 L 580.00,40.54" fill="none" stroke="#D4A5A5" stroke-width="2" style="animation-delay: 0.2s;"/>
+          <path class="draw-line" d="M 40.00,257.58 L 44.50,257.40 L 49.00,257.20 L 53.50,256.98 L 58.00,256.75 L 62.50,256.50 L 67.00,256.23 L 71.50,255.94 L 76.00,255.64 L 80.50,255.30 L 85.00,254.94 L 89.50,254.56 L 94.00,254.15 L 98.50,253.71 L 103.00,253.23 L 107.50,252.72 L 112.00,252.17 L 116.50,251.59 L 121.00,250.96 L 125.50,250.29 L 130.00,249.57 L 134.50,248.80 L 139.00,247.97 L 143.50,247.09 L 148.00,246.15 L 152.50,245.14 L 157.00,244.07 L 161.50,242.92 L 166.00,241.70 L 170.50,240.40 L 175.00,239.02 L 179.50,237.56 L 184.00,236.00 L 188.50,234.35 L 193.00,232.60 L 197.50,230.75 L 202.00,228.79 L 206.50,226.73 L 211.00,224.56 L 215.50,222.27 L 220.00,219.87 L 224.50,217.35 L 229.00,214.71 L 233.50,211.95 L 238.00,209.08 L 242.50,206.08 L 247.00,202.97 L 251.50,199.75 L 256.00,196.41 L 260.50,192.97 L 265.00,189.42 L 269.50,185.78 L 274.00,182.04 L 278.50,178.23 L 283.00,174.34 L 287.50,170.39 L 292.00,166.38 L 296.50,162.32 L 301.00,158.23 L 305.50,154.12 L 310.00,150.00 L 314.50,145.88 L 319.00,141.77 L 323.50,137.68 L 328.00,133.62 L 332.50,129.61 L 337.00,125.66 L 341.50,121.77 L 346.00,117.96 L 350.50,114.22 L 355.00,110.58 L 359.50,107.03 L 364.00,103.59 L 368.50,100.25 L 373.00,97.03 L 377.50,93.92 L 382.00,90.92 L 386.50,88.05 L 391.00,85.29 L 395.50,82.65 L 400.00,80.13 L 404.50,77.73 L 409.00,75.44 L 413.50,73.27 L 418.00,71.21 L 422.50,69.25 L 427.00,67.40 L 431.50,65.65 L 436.00,64.00 L 440.50,62.44 L 445.00,60.98 L 449.50,59.60 L 454.00,58.30 L 458.50,57.08 L 463.00,55.93 L 467.50,54.86 L 472.00,53.85 L 476.50,52.91 L 481.00,52.03 L 485.50,51.20 L 490.00,50.43 L 494.50,49.71 L 499.00,49.04 L 503.50,48.41 L 508.00,47.83 L 512.50,47.28 L 517.00,46.77 L 521.50,46.29 L 526.00,45.85 L 530.50,45.44 L 535.00,45.06 L 539.50,44.70 L 544.00,44.36 L 548.50,44.06 L 553.00,43.77 L 557.50,43.50 L 562.00,43.25 L 566.50,43.02 L 571.00,42.80 L 575.50,42.60 L 580.00,42.42" fill="none" stroke="#4F5D45" stroke-width="2.5" style="animation-delay: 0.4s;"/>
+          <path class="draw-line" d="M 40.00,259.46 L 44.50,259.41 L 49.00,259.37 L 53.50,259.32 L 58.00,259.27 L 62.50,259.21 L 67.00,259.15 L 71.50,259.08 L 76.00,259.01 L 80.50,258.93 L 85.00,258.85 L 89.50,258.76 L 94.00,258.67 L 98.50,258.56 L 103.00,258.45 L 107.50,258.33 L 112.00,258.20 L 116.50,258.07 L 121.00,257.92 L 125.50,257.76 L 130.00,257.58 L 134.50,257.40 L 139.00,257.20 L 143.50,256.98 L 148.00,256.75 L 152.50,256.50 L 157.00,256.23 L 161.50,255.94 L 166.00,255.64 L 170.50,255.30 L 175.00,254.94 L 179.50,254.56 L 184.00,254.15 L 188.50,253.71 L 193.00,253.23 L 197.50,252.72 L 202.00,252.17 L 206.50,251.59 L 211.00,250.96 L 215.50,250.29 L 220.00,249.57 L 224.50,248.80 L 229.00,247.97 L 233.50,247.09 L 238.00,246.15 L 242.50,245.14 L 247.00,244.07 L 251.50,242.92 L 256.00,241.70 L 260.50,240.40 L 265.00,239.02 L 269.50,237.56 L 274.00,236.00 L 278.50,234.35 L 283.00,232.60 L 287.50,230.75 L 292.00,228.79 L 296.50,226.73 L 301.00,224.56 L 305.50,222.27 L 310.00,219.87 L 314.50,217.35 L 319.00,214.71 L 323.50,211.95 L 328.00,209.08 L 332.50,206.08 L 337.00,202.97 L 341.50,199.75 L 346.00,196.41 L 350.50,192.97 L 355.00,189.42 L 359.50,185.78 L 364.00,182.04 L 368.50,178.23 L 373.00,174.34 L 377.50,170.39 L 382.00,166.38 L 386.50,162.32 L 391.00,158.23 L 395.50,154.12 L 400.00,150.00 L 404.50,145.88 L 409.00,141.77 L 413.50,137.68 L 418.00,133.62 L 422.50,129.61 L 427.00,125.66 L 431.50,121.77 L 436.00,117.96 L 440.50,114.22 L 445.00,110.58 L 449.50,107.03 L 454.00,103.59 L 458.50,100.25 L 463.00,97.03 L 467.50,93.92 L 472.00,90.92 L 476.50,88.05 L 481.00,85.29 L 485.50,82.65 L 490.00,80.13 L 494.50,77.73 L 499.00,75.44 L 503.50,73.27 L 508.00,71.21 L 512.50,69.25 L 517.00,67.40 L 521.50,65.65 L 526.00,64.00 L 530.50,62.44 L 535.00,60.98 L 539.50,59.60 L 544.00,58.30 L 548.50,57.08 L 553.00,55.93 L 557.50,54.86 L 562.00,53.85 L 566.50,52.91 L 571.00,52.03 L 575.50,51.20 L 580.00,50.43" fill="none" stroke="#A85C3D" stroke-width="2" style="animation-delay: 0.6s;"/>
+          <path class="draw-line" d="M 40.00,259.88 L 44.50,259.87 L 49.00,259.86 L 53.50,259.85 L 58.00,259.84 L 62.50,259.82 L 67.00,259.81 L 71.50,259.79 L 76.00,259.78 L 80.50,259.76 L 85.00,259.74 L 89.50,259.72 L 94.00,259.70 L 98.50,259.68 L 103.00,259.65 L 107.50,259.63 L 112.00,259.60 L 116.50,259.57 L 121.00,259.53 L 125.50,259.50 L 130.00,259.46 L 134.50,259.41 L 139.00,259.37 L 143.50,259.32 L 148.00,259.27 L 152.50,259.21 L 157.00,259.15 L 161.50,259.08 L 166.00,259.01 L 170.50,258.93 L 175.00,258.85 L 179.50,258.76 L 184.00,258.67 L 188.50,258.56 L 193.00,258.45 L 197.50,258.33 L 202.00,258.20 L 206.50,258.07 L 211.00,257.92 L 215.50,257.76 L 220.00,257.58 L 224.50,257.40 L 229.00,257.20 L 233.50,256.98 L 238.00,256.75 L 242.50,256.50 L 247.00,256.23 L 251.50,255.94 L 256.00,255.64 L 260.50,255.30 L 265.00,254.94 L 269.50,254.56 L 274.00,254.15 L 278.50,253.71 L 283.00,253.23 L 287.50,252.72 L 292.00,252.17 L 296.50,251.59 L 301.00,250.96 L 305.50,250.29 L 310.00,249.57 L 314.50,248.80 L 319.00,247.97 L 323.50,247.09 L 328.00,246.15 L 332.50,245.14 L 337.00,244.07 L 341.50,242.92 L 346.00,241.70 L 350.50,240.40 L 355.00,239.02 L 359.50,237.56 L 364.00,236.00 L 368.50,234.35 L 373.00,232.60 L 377.50,230.75 L 382.00,228.79 L 386.50,226.73 L 391.00,224.56 L 395.50,222.27 L 400.00,219.87 L 404.50,217.35 L 409.00,214.71 L 413.50,211.95 L 418.00,209.08 L 422.50,206.08 L 427.00,202.97 L 431.50,199.75 L 436.00,196.41 L 440.50,192.97 L 445.00,189.42 L 449.50,185.78 L 454.00,182.04 L 458.50,178.23 L 463.00,174.34 L 467.50,170.39 L 472.00,166.38 L 476.50,162.32 L 481.00,158.23 L 485.50,154.12 L 490.00,150.00 L 494.50,145.88 L 499.00,141.77 L 503.50,137.68 L 508.00,133.62 L 512.50,129.61 L 517.00,125.66 L 521.50,121.77 L 526.00,117.96 L 530.50,114.22 L 535.00,110.58 L 539.50,107.03 L 544.00,103.59 L 548.50,100.25 L 553.00,97.03 L 557.50,93.92 L 562.00,90.92 L 566.50,88.05 L 571.00,85.29 L 575.50,82.65 L 580.00,80.13" fill="none" stroke="#B58484" stroke-width="2.5" style="animation-delay: 0.8s;"/>
 
           <!-- Inflection Dots -->
           <g class="draw-dot" aria-hidden="true">
@@ -408,12 +409,12 @@
             <circle cx="490" cy="150" r="4" fill="#B58484" stroke="#FAF6EF" stroke-width="2"/>
           </g>
           <line x1="40" y1="150" x2="580" y2="150" stroke="rgba(44,40,35,0.12)" stroke-width="1" stroke-dasharray="3 4"/>
-          <text x="575" y="146" text-anchor="end" font-family="DM Sans" font-size="9" fill="#8A8378" font-style="italic">50% probability threshold</text>
+          <text x="575" y="146" text-anchor="end" font-family="DM Sans" font-size="9" fill="#6B645B" font-style="italic">50% probability threshold</text>
         </svg>
 
         <div class="mt-6 pt-6 flex flex-wrap items-center justify-between gap-4 text-xs" style="border-top: 1px solid rgba(44,40,35,0.08);">
           <span style="color: var(--ink-soft);">2-Parameter Logistic (2PL) Model</span>
-          <span style="color: var(--ink-faint);">Christ University Doctoral Study</span>
+          <span style="color: var(--ink-faint);">Illustrative curves · a = 1.5 · not study estimates</span>
         </div>
       </div>
     </div>
@@ -710,12 +711,29 @@
   }, { passive: true });
 
   // Reveal observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // Content stays visible unless reveal observation is successfully initialized.
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealElements = document.querySelectorAll('.reveal');
+    let observer;
+    try {
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('reveal-pending');
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      revealElements.forEach(el => {
+        observer.observe(el);
+        el.classList.add('reveal-pending');
+      });
+    } catch (error) {
+      if (observer) observer.disconnect();
+      revealElements.forEach(el => el.classList.remove('reveal-pending'));
+    }
+  }
 
   // Toast helper
   function showToast(msg) {
